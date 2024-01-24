@@ -11,4 +11,4 @@ class Sportowiec:
         def launch():
             Complaints().root.mainloop()
 
-        Button(self.root, text="Dodaj plan żywieniowy", command=launch, background="yellow").pack(pady=50)
+        Button(self.root, text="Dodaj uwagę", command=launch, background="yellow").pack(pady=50)

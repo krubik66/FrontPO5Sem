@@ -11,4 +11,4 @@ class Psycholog:
         def launch():
             MakingReports().root.mainloop()
 
-        Button(self.root, text="Edytuj wydarzenie", command=launch, background="yellow").pack(pady=50)
+        Button(self.root, text="Dodaj raport", command=launch, background="yellow").pack(pady=50)
