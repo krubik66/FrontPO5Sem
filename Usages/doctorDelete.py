@@ -44,10 +44,10 @@ class DoctorDelete:
         self.tree = ttk.Treeview(self.root, columns=columns, show='headings')
 
         # define headings
-        self.tree.heading('procedure', text='Procedure')
+        self.tree.heading('procedure', text='Procedury')
 
         # generate sample data
-        procedures = [("none",), ]
+        procedures = [("Badania dopingowe",), ("Badania ortopedyczne",)]
 
         # add data to the treeview
         for procedure in procedures:
