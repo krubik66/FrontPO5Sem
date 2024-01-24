@@ -31,35 +31,50 @@ class DietykCreate:
         label1 = Label(self.root, text="Składniki")
         label2 = Label(self.root, text="Posiłki")
 
+        self.kalorieSkladniki = 0
+
         def selectedSkladniki(event):
             selected_index = skladniki.curselection()
-            selected_items = [skladniki.get(index) for index in selected_index] # wybrane składniki ----------------------
+            selected_items = [skladnikiLista[index] for index in selected_index] # wybrane składniki ----------------------
             print(selected_items)
+            self.kalorieSkladniki = 0
+            for skladnik in selected_items:
+                self.kalorieSkladniki += skladnik[1]
+            kalorieLabel.configure(text=f"Kalorie: {self.kalorieSkladniki + self.kaloriePosilki}")
             pass
 
         skladniki = Listbox(self.root, selectmode=MULTIPLE, height=5, width=20)
         skladniki.bind('<<ListboxSelect>>', selectedSkladniki)
 
-        skladnikiLista = ["Mąka", "Mleko", "Ser"]# składniki ------------------------------------------------------
+        skladnikiLista = [("Mąka", 1), ("Mleko", 5), ("Ser", 10)]# składniki ------------------------------------------------------
         skladniki.delete(0, END)
         for skladnik in skladnikiLista:
-            skladniki.insert(END, skladnik)
+            skladniki.insert(END, skladnik[0])
         label1.pack(pady=5)
         skladniki.pack()
 
+        self.kaloriePosilki = 0
+
+        kalorieLabel = Label(self.root, text=f"Kalorie: {self.kalorieSkladniki + self.kaloriePosilki}")
+        kalorieLabel.pack(pady=3)
+
         def selectedPosilki(event):
             selected_index = posilki.curselection()
-            selected_items = [posilki.get(index) for index in selected_index] # wybrane posiłki ----------------------
+            selected_items = [posilkiLista[index] for index in selected_index] # wybrane posiłki ----------------------
             print(selected_items)
+            self.kaloriePosilki = 0
+            for posilek in selected_items:
+                self.kaloriePosilki += posilek[1]
+            kalorieLabel.configure(text=f"Kalorie: {self.kalorieSkladniki + self.kaloriePosilki}")
             pass
 
         posilki = Listbox(self.root, selectmode=MULTIPLE, height=5, width=20)
         posilki.bind('<<ListboxSelect>>', selectedPosilki)
 
-        posilkiLista = ["Zupa grzybowa", "Schabowy z ziemniakami", "Frytki"]# posiłki -------------------------------
+        posilkiLista = [("Zupa grzybowa", 500), ("Schabowy z ziemniakami", 1000), ("Frytki", 50)]# posiłki -------------------------------
         posilki.delete(0, END)
         for posilek in posilkiLista:
-            posilki.insert(END, posilek)
+            posilki.insert(END, posilek[0])
         label2.pack(pady=5)
         posilki.pack()
 
