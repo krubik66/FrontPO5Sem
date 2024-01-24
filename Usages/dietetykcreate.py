@@ -40,7 +40,7 @@ class DietykCreate:
         skladniki = Listbox(self.root, selectmode=MULTIPLE, height=5, width=20)
         skladniki.bind('<<ListboxSelect>>', selectedSkladniki)
 
-        skladnikiLista = ["Mąka", "Mleko", "Ser"]
+        skladnikiLista = ["Mąka", "Mleko", "Ser"]# składniki ------------------------------------------------------
         skladniki.delete(0, END)
         for skladnik in skladnikiLista:
             skladniki.insert(END, skladnik)
@@ -56,7 +56,7 @@ class DietykCreate:
         posilki = Listbox(self.root, selectmode=MULTIPLE, height=5, width=20)
         posilki.bind('<<ListboxSelect>>', selectedPosilki)
 
-        posilkiLista = ["Zupa grzybowa", "Schabowy z ziemniakami", "Frytki"]
+        posilkiLista = ["Zupa grzybowa", "Schabowy z ziemniakami", "Frytki"]# posiłki -------------------------------
         posilki.delete(0, END)
         for posilek in posilkiLista:
             posilki.insert(END, posilek)
