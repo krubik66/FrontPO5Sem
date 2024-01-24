@@ -116,6 +116,5 @@ class DoctorDelete:
         button.pack()
 
 
-
 if __name__ == "__main__":
     DoctorDelete().root.mainloop()
