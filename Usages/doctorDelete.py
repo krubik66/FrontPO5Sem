@@ -1,9 +1,9 @@
-from tkinter import Tk, StringVar, Entry, Label, Radiobutton, Button, END, ttk, Text, Listbox, SINGLE
+from tkinter import Tk, StringVar, Entry, Label, Radiobutton, Button, END, ttk, Text, Listbox, SINGLE, Toplevel
 
 
 class DoctorDelete:
-    def __init__(self):
-        self.root = Tk()
+    def __init__(self, root):
+        self.root = root
         self.root.title("Usuwanie wydarzenia")
         self.root.geometry("500x400")
         self.root.configure(background="green")
@@ -25,13 +25,15 @@ class DoctorDelete:
     def on_save(self):
         def forget_old():
             self.save_button.pack_forget()
-            self.radio1.forget()
-            self.radio2.forget()
-            self.sportowiec_name_field.forget()
+            self.radio1.pack_forget()
+            self.radio2.pack_forget()
+            self.sportowiec_name_field.pack_forget()
 
         if self.selected_option.get() == "Zdrowy":
-            forget_old()
+            print(self.selected_option.get())
+            self.root.destroy()
         else:
+            print(self.selected_option.get())
             forget_old()
             self.more_tests_nedded()
 
@@ -117,4 +119,4 @@ class DoctorDelete:
 
 
 if __name__ == "__main__":
-    DoctorDelete().root.mainloop()
+    DoctorDelete(Tk()).root.mainloop()

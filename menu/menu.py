@@ -1,8 +1,9 @@
-from tkinter import Tk, Button
+from tkinter import Tk, Button, Toplevel
 from menu.Dietetyk import Dietetyk
 from menu.Sportowiec import Sportowiec
 from menu.Psycholog import Psycholog
 from menu.Doktor import Doktor
+from Usages.complaints import Complaints
 
 
 class Menu:
@@ -17,7 +18,8 @@ class Menu:
         Button(self.root, text="Dietetyk", command=launch_dietetyk, background="yellow").pack(pady=10)
 
         def launch_doktor():
-            Doktor().root.mainloop()
+            sub = Toplevel(self.root)
+            Doktor(sub).root.mainloop()
 
         Button(self.root, text="Doktor", command=launch_doktor, background="yellow").pack(pady=10)
 
