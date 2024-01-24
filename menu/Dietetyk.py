@@ -11,4 +11,4 @@ class Dietetyk:
         def launch():
             DietykCreate().root.mainloop()
 
-        Button(self.root, text="Dodaj plan żywieniowy", command=launch, background="yellow").pack(pady=50)
+        Button(self.root, text="Stwórz plan żywieniowy", command=launch, background="yellow").pack(pady=50)

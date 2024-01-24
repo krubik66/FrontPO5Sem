@@ -6,7 +6,7 @@ from tkcalendar import Calendar
 class DietykCreate:
     def __init__(self):
         self.root = Tk()
-        self.root.title("Dodawanie planu żywieniowego")
+        self.root.title("Tworzenie planu żywieniowego")
         self.root.geometry("500x400")
         self.root.configure(background="green")
 

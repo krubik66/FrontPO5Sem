@@ -38,7 +38,7 @@ class Complaints:
 
     def grad_date(self):
         # wybor dnia -----------------------------------------------
-        self.date.config(text="Wybrana data: " + self.cal.get_date())
+        # self.date.config(text="Wybrana data: " + self.cal.get_date())
 
         # tablica string [day, month, year]---------------------------------------------------------------
         result = self.cal.get_date().split("/")[0]
